@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            lookPositionCountDown=lookPositionCountDown-(1*Time.deltaTime);
+            lookPositionCountDown=lookPositionCountDown-(1);
         }
 
         if (Input.GetMouseButtonDown(1))

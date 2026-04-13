@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class enemyCuntroelr : MonoBehaviour
 {
+    private enemySpawnerCContorler spawner;
     
-            public EnemySpawner externSCRPT;
+
    [Header("Movement")]
     public float speed = 2f;
     public bool moveRight = true;
@@ -49,10 +50,13 @@ public class enemyCuntroelr : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Bullet"))
+    if (collision.tag=="Bullet")
     {
-        externSCRPT.enemyKillCount++;
+        
         Destroy(gameObject);
+        spawner = FindObjectOfType<enemySpawnerCContorler>();
+        spawner.enemyKillCount++;
+        Debug.Log(spawner.enemyKillCount);
     }
     }
 }

@@ -56,7 +56,6 @@ public class enemyCuntroelr : MonoBehaviour
         Destroy(gameObject);
         spawner = FindObjectOfType<enemySpawnerCContorler>();
         spawner.enemyKillCount++;
-        Debug.Log(spawner.enemyKillCount);
     }
     }
 }

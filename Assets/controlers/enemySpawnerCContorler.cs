@@ -6,8 +6,8 @@ public class enemySpawnerCContorler  : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public int selectedLevel;
-    public static bool[] compltetLevels;
-        public bool[] compltetLevelsCop;
+    // public static bool[] compltetLevels;
+    //     public bool[] compltetLevelsCop;
 
     public int enemyKillCount=0; // ändras extrent
 
@@ -34,16 +34,16 @@ public class enemySpawnerCContorler  : MonoBehaviour
             timer = 0f;
         }
 
-        if(!(compltetLevels[0] && compltetLevels[1] && compltetLevels[2] && compltetLevels[3] && compltetLevels[4]) && SceneManager.GetActiveScene().name == "level6")
-        {
-            Debug.Log(compltetLevels[0]);
-            Debug.Log(compltetLevels[1]);
-            Debug.Log(compltetLevels[2]);
-            Debug.Log(compltetLevels[3]);
-            Debug.Log(compltetLevels[4]);
-            Debug.Log(compltetLevels[5]);
-            SceneManager.LoadScene("select level");
-        }
+        // if(!(compltetLevels[0] && compltetLevels[1] && compltetLevels[2] && compltetLevels[3] && compltetLevels[4]) && SceneManager.GetActiveScene().name == "level6")
+        // {
+        //     Debug.Log(compltetLevels[0]);
+        //     Debug.Log(compltetLevels[1]);
+        //     Debug.Log(compltetLevels[2]);
+        //     Debug.Log(compltetLevels[3]);
+        //     Debug.Log(compltetLevels[4]);
+        //     Debug.Log(compltetLevels[5]);
+        //     SceneManager.LoadScene("select level");
+        // }
 
         if(SceneManager.GetActiveScene().name=="level1")
             selectedLevel=1;
@@ -58,13 +58,14 @@ public class enemySpawnerCContorler  : MonoBehaviour
         if(SceneManager.GetActiveScene().name=="level6")
             selectedLevel=6;
 
+        Debug.Log(enemyKillCount);
         if(enemyKillCount>=4) // det här är 10 men det träffar 3 gånger per
         {
             SceneManager.LoadScene("select level");
-            compltetLevels[selectedLevel]=true;
+            // compltetLevels[selectedLevel]=true;
         }
-        if(compltetLevels[6]==true)
-            SceneManager.LoadScene("victory");
+        // if(compltetLevels[6]==true)
+        //     SceneManager.LoadScene("victory");
 
     }
 

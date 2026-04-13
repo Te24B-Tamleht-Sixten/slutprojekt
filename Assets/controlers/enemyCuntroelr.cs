@@ -49,11 +49,10 @@ public class enemyCuntroelr : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit something: " + collision.name);
         if (collision.CompareTag("Bullet"))
-        {
-            externSCRPT.enemyKillCount++;
-            Destroy(gameObject);
-        }
+    {
+        externSCRPT.enemyKillCount++;
+        Destroy(gameObject);
+    }
     }
 }
